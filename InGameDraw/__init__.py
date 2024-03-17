@@ -123,7 +123,7 @@ def draw_circle(
             shape = b'vfx/omen/eff/ffd/circle.avfx'
     else:
         def shape(o: BaseOmen):
-            if _inner_radius := o.get_maybe_callable(radius):
+            if _inner_radius := o.get_maybe_callable(inner_radius):
                 return b'vfx/omen/eff/ffd/donut_%d.avfx' % int(_inner_radius / o.get_maybe_callable(radius) * 0xffff)
             else:
                 return b'vfx/omen/eff/ffd/circle.avfx'
